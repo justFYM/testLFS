@@ -1,0 +1,236 @@
+
+
+
+.highlight-today a {
+    background-color: #07ffc1 !important;
+  }
+#ui-datepicker-div {
+    z-index: 9999999 !important;
+ transform: translateX(100%);
+}
+  
+  .ui-datepicker-close{
+      opacity: .7;
+    color: rgb(1, 1, 39) !important;
+    border: 1px solid #c5c5c5 !important;
+    background: #f6f6f6 !important;
+    font-weight: normal !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+  }
+  .ui-datepicker-close:hover{
+    background-color: rgb(206, 102, 5) !important;
+    color: #f6f6f6 !important;
+  }
+  
+  .ui-datepicker-current {
+      opacity: .7;
+    color: rgb(1, 1, 39) !important;
+    border: 1px solid #c5c5c5 !important;
+    background: #f6f6f6 !important;
+    font-weight: normal !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+  }
+  .ui-datepicker-current:hover{
+    background-color: rgb(206, 102, 5) !important;
+    color: #f6f6f6 !important;
+  }
+  
+  /* Nueva regla para los días habilitados */
+  .ui-datepicker-calendar .ui-state-enabled  .ui-state-active {
+      background-color: #066046 !important;
+    color: white !important;
+    border: 2px solid rgb(44, 43, 41) !important;
+  }
+  .ui-datepicker-calendar .ui-state-default{
+      
+      background-color: rgb(202, 197, 130) !important;
+  }
+  .ui-widget-content .ui-state-disabled{
+      opacity: .2;
+      background-color: white !important;
+  }
+  .ui-state-enabled .ui-state-default{
+      background-color: #3abe9b !important;
+      color: white;
+  }
+  .ui-state-enabled .ui-state-default:hover{
+      background-color: #066046  !important;
+      color: white;
+  }
+
+
+
+
+.modal-backdrop {
+    opacity: 0 !important; 
+}
+.modal-content.draggable {
+    cursor: move;
+}
+#ui{
+    z-index: 9998 !important;
+}
+.modal.fade {
+    z-index: 9999 !important;
+}
+
+#popup {
+    overflow: visible !important;
+}
+
+.modal-title {
+    color:white;
+}
+
+.modal-header {
+    border-radius: 0; /* Elimina los bordes redondeados */
+    background-color: #3f4854; /* Color de fondo */
+    color: white !important; /* Color de texto */
+}
+
+/* Estilo personalizado para el cuerpo de la modal */
+.modal-body {
+    border-radius: 0; /* Elimina los bordes redondeados */
+    background-color: rgb(63 72 84 / 78%) !important; /* Color de fondo */
+    color: white; /* Color de texto */
+}
+
+/* Estilo personalizado para el pie de la modal */
+.modal-footer {
+    border-radius: 0; /* Elimina los bordes redondeados */
+    background-color: #3f4854 !important; /* Color de fondo */
+    color: #fff !important; /* Color de texto */
+}
+
+
+.tjs-_base__scrollbars::-webkit-scrollbar {
+    width: 10px !important; /* Cambiar el color de la barra de desplazamiento */
+   
+}
+
+.tjs-related-maps__dropdown-inner {
+   padding: 0px !important;
+}
+.card{
+    border-radius:0px !important;
+
+}
+.modal-content{
+    width:800px !important;
+}
+
+.tjs-map-interaction-window__window {
+    width: 400px !important;
+    z-index: 1 !important;
+}
+#measureToolButtonsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+#logoGeoAlert{
+    display:grid !important;
+    justify-content: center !important
+}
+
+/* Estilos predeterminados para pantallas mayores o iguales a 1400px */
+#popupAOI {
+    z-index: 99999 !important;
+    overflow: visible !important;
+    margin-left: -230px !important;
+    font-family: "Nunito",sans-serif !important;
+    position: fixed;
+    top: 50%; /* Alinea la modal en el centro verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra la modal horizontalmente */
+    /* Resto de tus estilos */
+}
+
+/* Estilos para pantallas menores que 1400px */
+@media (max-width: 1399px) {
+    #popupAOI {
+        margin-left: -270px !important;
+        font-family: "Nunito",sans-serif !important;
+    }
+}
+@media (max-width: 1399px) {
+    #popup {
+        margin-left: -100px !important;
+        font-family: "Nunito",sans-serif !important;
+    }
+}
+.nav-link {
+    font-size: 11px !important;
+    font-family: "Nunito",sans-serif !important;
+}
+main.pb-3 {
+   padding-bottom:0 !important;
+}
+
+
+
+.tjs-feature-info-section__content tr {
+    border: 1px solid #181C32 !important;
+    border-bottom: 0px solid !important;
+}
+
+.tjs-feature-info-section__content td {
+    border: 1px solid #181C32 !important;
+}
+
+.tjs-feature-info-section__content table {
+    border: 1px solid #181C32 !important;
+}
+
+.tjs-feature-info-section__content thead {
+    border: 1px solid #181C32 !important;
+    border-bottom: 0px solid !important;
+}
+
+.tjs-feature-info-section__content table-bordered {
+    border: 1px solid #dee2e6 !important;
+}
+
+#ContainerSaveLog button.btn.btn-primary, select.form-control, input.form-control, .form-control {
+    font-size: 11px !important;
+    padding: 5px 5px 5px 5px !important;
+    border: 1px solid #181C32 !important;
+}
+#ModalGraph tr {
+    border: 1px solid #181C32 !important;
+    border-bottom: 0px solid !important;
+}
+
+#ModalGraph td {
+    border: 1px solid #181C32 !important;
+}
+
+#ModalGraph table {
+    border: 1px solid #181C32 !important;
+    font-family: monospace;
+}
+
+#ModalGraph thead {
+    border: 1px solid #181C32 !important;
+    border-bottom: 0px solid !important;
+}
+
+#ModalGraph table-bordered {
+    border: 1px solid #dee2e6 !important;
+}
+
+#LogBookContainer {
+    border-left: 1px solid #181C32 !important;
+}
+#ContainerSaveLog {
+  
+    width: 100% !important;
+}
+
+

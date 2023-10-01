@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+   
+    <div class='mb-5' style='overflow-x: auto;'>
+        <ul class='nav flex-nowrap text-nowrap'>
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' onclick="GenerateGraphController({{idInstrumento}},1,false,'null','',-1,false,'Serie de Tiempo')" data-bs-toggle='tab'>Serie de Tiempo</a>
+            </li>
+            <li>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' onclick="GenerateGraphController({{idInstrumento}},1,false,'null','Valor Altura',-1,false,'Consolidado Altura')">Consolidado Altura</a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' onclick="GenerateGraphController({{idInstrumento}},1,false,'null','Valor Transversal',-1,false,'Consolidado Transversal')">Consolidado Transversal</a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' onclick="GenerateGraphController({{idInstrumento}},1,false,'null','Valor Longitudinal',-1,false,'Consolidado Longitudinal')">Consolidado Longitudinal</a>
+            </li>
+
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' onclick="GenerateGraphController({{idInstrumento}},1,true,'null','Valor Altura',-1,false,'Consolidado Altura Promedios')">Consolidado Altura Promedios</a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' onclick="GenerateGraphController({{idInstrumento}},1,true,'null','Valor Transversal',-1,false,'Consolidado Transversal Promedios')">Consolidado Transversal Promedios</a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' onclick="GenerateGraphController({{idInstrumento}},1,true,'null','Valor Longitudinal',-1,false,'Consolidado Longitudinal Promedios')">Consolidado Longitudinal Promedios</a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' data-bs-toggle='tab'>Detalles</a>
+            </li>
+
+        </ul>
+</div>
+</body>
+</html>

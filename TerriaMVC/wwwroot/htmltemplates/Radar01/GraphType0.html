@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="mainDiv" style="background-color: white; width: 100%">
+        [[CHECK_SELECT]]
+        <div style="width: 40%; height: 50%; margin: 0 auto;">
+            <div class="row" style="text-align:center;">
+
+                <div class="col-md-12 text-center mt-1">
+                    <div class="d-flex justify-content-center">
+                        <div id="divTest" style="flex: 1;">
+                            <select style="padding: 0.5rem 0.5rem; font-size: 0.875rem;" id="selectHour" class="form-control text-center">
+                                <option value="mensaje" disabled>Seleccione una hora para promediar las mediciones</option>
+                                <option value="4">Promedio cada 4 horas</option>
+                                <option value="12">Promedio cada 12 horas</option>
+                                <option value="24" selected>Promedio cada 24 horas</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        [[END_CHECK_SELECT]]
+        <div id="chartContainer" style="width: 100%; height: 400px;">
+           
+            <script id="executeHighCharts">
+            var chartOptions = {
+                title: {
+                    text: "{{title}}"
+                },
+                xAxis: {
+                    categories: {{sensor.sensor_eje_x}}
+                },
+                series: [{
+                    name: 'Valor',
+                    data: {{sensor.sensor_eje_y}}
+                }]
+            };
+            Highcharts.chart('chartContainer', chartOptions);
+            </script>
+            
+
+        </div>
+    </div>
+    [[CHECK_SCRIPT_SELECT]]
+    <script>
+        var selectElement = document.getElementById('selectHour');
+
+        // Agregar el evento onChange al elemento select
+        selectElement.addEventListener('change', async function () {
+            var selectedValue = selectElement.value;
+            console.log("Hora seleccionada: " + selectedValue);
+            var mainDiv = document.getElementById('mainDiv');
+            var containerDiv = mainDiv.querySelector('div#chartContainer');
+            containerDiv.innerHTML = `<div class="d-flex justify-content-center mt-20 mb-4"><span class="spinner-border text-success"></span><div style="color:#212529;"class="mt-2 mx-2">Cargando gráfico...</div></div>`
+            var idInstrumento = Number({{idInstrumento}});
+            var idTypeGraph = Number({{idTypeGraph}});
+            var averageRequired = {{averageRequired}};
+            var reDrawSelect = false;
+            var nombreSensor = '{{nombreSensor}}';
+            var reDrawGraph = {{reDrawGraph}};
+            var hourToAverage = Number(selectedValue);
+            const urlReDrawGraph = `https://localhost:7242/api/GenerateGraphController`;
+        const dataReDrawGraph = JSON.stringify({ idInstrumento, idTypeGraph, averageRequired, nombreSensor, reDrawGraph, hourToAverage, reDrawSelect });
+            //  const dataReDrawGraph = JSON.stringify({ idInstrumento, idTypeGraph, averageRequired, nombreVariable, nombreSensor, idSensor, reDrawGraph, reDrawSelect, fechaCalendario });
+
+        const respuestaReDrawGraph = await fetch(urlReDrawGraph, {
+                method: 'POST',
+                body: dataReDrawGraph,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const responseDataReDrawGraph = await respuestaReDrawGraph.text();
+
+        if (respuestaReDrawGraph.ok) {
+            //spinner.remove();
+            containerDiv.innerHTML = `${responseDataReDrawGraph}`
+            var fromTerriaMap = document.getElementById("myNewDiv");
+            var fromJS = document.getElementById("ModalGraph");
+            if (fromJS && fromTerriaMap) {
+                var executeHighChartsScript = modalGraph.querySelector('script#executeHighCharts');
+                var scriptContent = executeHighChartsScript.textContent;
+                eval(scriptContent);
+            } else if (fromJS) {
+                var executeHighChartsScript = modalGraph.querySelector('script#executeHighCharts');
+                var scriptContent = executeHighChartsScript.textContent;
+                eval(scriptContent);
+            }
+            else {
+                var executeHighChartsScript = myNewDiv.querySelector('script#executeHighCharts');
+                var scriptContent = executeHighChartsScript.textContent;
+                eval(scriptContent);
+            }
+        }
+            
+               
+            
+    
+
+           // console.log("Probando");
+            //En la respuesta colocar en containerDiv la respuesta del backend.
+            /*
+             setTimeout(function () {
+                 containerDiv.innerHTML = `<div style="color:navy">Hola!</div>
+                 <script id="executeHighCharts">
+                 console.log("Ejecutado de JS")`
+             }, 2000); // 2000 milisegundos = 2 segundos
+             setTimeout(function () {
+                 var executeHighChartsScript = myNewDiv.querySelector('script#executeHighCharts');
+                 var scriptContent = executeHighChartsScript.textContent;
+                 eval(scriptContent);
+             }, 2000); // 2000 milisegundos = 2 segundos
+            */
+        });
+    </script>
+    [[END_CHECK_SCRIPT_SELECT]]
+
+    <script>
+
+    </script>
+
+</body>
+</html>

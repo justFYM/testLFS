@@ -1,0 +1,17 @@
+﻿[[ITERAR]]
+<div class="card {{color}}">
+    <div class="card-body">
+        <div class="row align-items-center">
+            <div class="col-md-9">
+                <h7 class="card-title" style="margin-bottom: 5px;">{{datetime}} {{nombreTipoInstrumento}} [{{nombreInstrumento}}]</h7>
+                <hr>
+                <p class="card-text">{{message}}</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <!-- Utiliza col-md-3 en lugar de col-md-2 para ajustar el ancho de la columna -->
+                <button id="openPopUp{{i}}" class="btn btn-secondary btn-sm mx-auto d-block" style="border-radius: 0;" onclick="testButtonHola('openPopUp{{i}}', '{{nombreTipoInstrumento}}', '{{nombreInstrumento}}', {{idInstrumento}}, {{idSensor}}, '{{nombreSensor}}')"><h7>Detalles</h7></button>
+            </div>
+        </div>
+    </div>
+</div>
+[[FIN_ITERAR]]

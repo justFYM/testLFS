@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="chartContainer" style="width: 100%; height: 400px;"></div>
+    <div id="myChartScript">
+        <script>
+            var chartOptions = {
+
+                title: {
+                    text: "{{title}}"
+                },
+                xAxis: {
+                    categories: [{{sensor.sensor_eje_x}}]
+                },
+                series: [
+                    [[ITERAR]]
+                    name: 'Promedio nivel',
+                    data: [10, 20, 15, 25, 18, 30, 22],
+                    [[FIN_ITERAR]]
+                ]
+               
+            };
+            Highcharts.chart('chartContainer', chartOptions);
+        </script>
+    </div>
+</body>
+</html>

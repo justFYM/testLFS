@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="chartContainer" style="width: 100%; height: 400px;"></div>
+    <div id="myChartScript">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script>
+            var chartOptions = {
+
+                title: {
+                    text: "{sensor.sensor_name}"
+                },
+                xAxis: {
+                    categories: {eje_x} 
+                },
+                series: [{
+                    name: 'Promedio nivel',
+                    data: {eje_y} 
+                }]
+            };
+            Highcharts.chart('chartContainer', chartOptions);
+        </script>
+    </div>
+</body>
+</html>

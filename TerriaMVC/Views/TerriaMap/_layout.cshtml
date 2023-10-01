@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="terria">
+<head>
+    <script src="~/js/FeatureInformationPopUp.js"></script>
+   
+    <script src="~/js/Render.js"></script>
+    <script src="~/js/DTO/GenerateButtonsDTO.js"></script>
+    <script src="~/js/DTO/GenerateSpinnerDTO.js"></script>
+    <script src="~/js/DTO/GenerateGraphDTO.js"></script>
+    <script src="~/js/DTO/GenerateContainersDTO.js"></script>
+    <script src="~/js/DTO/GenerateNotificationDTO.js"></script>
+    <script src="~/js/DTO/GeneratePopUpModal.js"></script>
+    <script src="~/js/DTO/ConfigurateAOI.js"></script>
+    <script src="~/js/DTO/GenerateAOIDTO.js"></script>
+    <script src="~/js/Clinoextensometro/Clinoextensometro.js"></script>
+    <script src="~/js/GNSS/GNSS.js"></script>
+    <script src="~/js/Piezometro/Piezometro.js"></script>
+    <script src="~/js/Prisma/Prisma.js"></script>
+    <script src="~/js/Sensor_Humedad/Sensor_Humedad.js"></script>
+    <script src="~/js/Trigger/Trigger.js"></script>
+    <script src="~/js/calendar.js"></script>
+    <script src="~/js/subplots.js"></script>
+    
+    <link rel="stylesheet" href="~/css/calendar.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <base href="~/lib/TerriaMap/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">  <!-- Use Chrome Frame in IE -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="A web map built on Terria Map">
+    <meta name="copyright" content="Copyright(c) 2012-2016 National ICT Australia Limited (NICTA), CSIRO Data61.  All rights reserved.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="template/css/style.bundle.css">
+    <script src="template/js/scripts.bundle.js"></script>
+    <script src="template/js/widgets.bundle.js"></script>
+    <script src="template/js/custom/widgets.js"></script>
+   <!-- Agregado el 31-08-2023 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Fin agregado el 31-08-2023 -->
+    <!-- Highcharts -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <!-- Opcional: Tema de Highcharts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.2.2/css/highcharts.css">
+    <!-- -->
+   
+    <script src="build/index.TerriaMap.js"></script>
+    <script src="build/vendors~index.TerriaMap.js"></script>
+    <meta name="msapplication-TileColor" content="#282D32">
+    <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#282D32">
+
+    <title>Terria Map</title>
+
+    <!-- Leaflet -->
+    <script>L_PREFER_CANVAS = true;</script>
+</head>
+<body>
+    <main role="main" class="pb-3">
+        @RenderBody()
+
+    </main>
+
+
+
+
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+

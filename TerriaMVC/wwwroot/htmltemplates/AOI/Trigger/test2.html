@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Subplots con Highcharts</title>
+</head>
+<body>
+    <div style="background-color: white; width: 100%">
+        <div style="width: 70%; height: 50%; margin: 0 auto;">
+            <div class="row" style="text-align:center;">
+                <div class="col-md-6 text-center mt-1">
+                    <div class="d-flex justify-content-center">
+
+                        <div style="flex: 1; ">
+                            <input style="padding: 0.5rem 0.5rem; font-size: 0.875rem;" type="text" id="datepicker" autocomplete="off" placeholder="Buscar eventos" class="form-control text-center">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center mt-1">
+                    <div class="d-flex justify-content-center">
+                        <div id="divTest" style="flex: 1;">
+                            <select style="padding: 0.5rem 0.5rem; font-size: 0.875rem;" id="selectFechas" class="form-control text-center">
+                                <option value="mensaje" disabled>¡3 eventos disponibles!</option>
+                                <option value="evento1">Evento 1</option>
+                                <option value="evento2">Evento 2</option>
+                                <option value="evento3" selected>Evento 3 (seleccionado)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="container" style="width: 100%; height: 400px;"></div>
+    </div>
+    <script>
+        chart = Highcharts.chart('container', {
+            chart: {
+                type: 'line',
+                marginTop: 50,
+                spacingTop: 10,
+                events: {
+                    
+                    redraw: function () {
+                        chart = this;
+                        drawVerticalLines(3);
+                    },
+                    load: function () {
+                        chart = this;
+                        drawVerticalLines(3);
+                    }
+                },
+            },
+            title: {
+                text: 'Preparando gráfico'
+            },
+            xAxis: {
+                categories: ['Categoría 1', 'Categoría 2', 'Categoría 3']
+            },
+            yAxis: [{
+                title: {
+                    text: 'Serie 1',
+                },
+                height: '30%',
+                offset: 0
+            }, {
+                title: {
+                    text: 'Serie 2',
+                },
+                top: '35%',
+                height: '30%',
+                offset: 0
+            }, {
+                title: {
+                    text: 'Serie 3',
+                },
+                top: '70%',
+                height: '30%',
+                offset: 0
+            }],
+            series: [{
+                name: 'Serie 1',
+                data: [10, 5, 18],
+                yAxis: 0,
+            }, {
+                name: 'Serie 2',
+                data: [15, 8, 14],
+                yAxis: 1,
+            }, {
+                name: 'Serie 3',
+                data: [12, 6, 20],
+                yAxis: 2,
+            }],
+            exporting: {
+                enabled: true,
+                menuItemDefinitions: {
+                    viewFullscreen: {
+                        textKey: 'viewFullscreen',
+                        onclick: function () {
+                            this.fullscreen.toggle();
+                           // setTimeout(drawVerticalLines, 500); // Dibuja las líneas después de 500ms
+                            drawVerticalLines(3);
+                        }
+                    },
+                    downloadPNG: {
+                        textKey: 'downloadPNG',
+                        onclick: function () {
+                           // chart.redraw();
+                            drawVerticalLines(3);
+                            this.exportChart({ type: 'image/png' });
+                            chart = this;
+                            console.log("Después de descargar")
+                          //  chart.redraw();
+                        }
+                    }
+                },
+                buttons: {
+                    contextButton: {
+                        menuItems: ["viewFullscreen", "separator", "downloadPNG"]
+                    }
+                },
+            },
+        });
+
+       // calendar("01-07-2023,02-08-2023,03-08-2023","10:20:35 - 10:21:25,10:23:35 - 10:24:25");
+       // calendar(fecha,evento);
+       //Pasarle los eventos totales, recuperarlos dentro de la función, generar un array por cada evento y luego filtrar por fecha.
+       //Cuando se seleccione una fecha del calendario verificar que esa fecha esté
+   // calendar("{{fechasCalendario}}", "{{eventos}}",{{idInstrumento}},{{idSensor}});
+    //    generateSelect("{{eventos}}");
+        // Obtener el elemento input por su ID
+        var datepickerInput = document.getElementById("datepicker");
+
+        // Agregar el atributo value con el valor "01-07-2023"
+     //   datepickerInput.value = "{{fechaSeleccionada}}";
+    </script>
+</body>
+</html>

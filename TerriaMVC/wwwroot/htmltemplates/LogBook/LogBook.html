@@ -1,0 +1,41 @@
+﻿<div id="LogBookContainer" class="table" style="overflow-x: hidden !important; background-color: white;overflow-y: auto; max-height:300px !important">
+
+    <table class="table-hover" style="width: 100%; height:100%">
+        <thead class="fs-7 text-gray-400 text-uppercase">
+            <tr>
+                <th>Timestamp</th>
+                <th>Sensor name</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody id="TBodyLogBook">
+            [[ITERAR_TR]]
+            <tr>
+                <td style="width:20%">{{note_timestamp}}</td>
+                <td style="width:20%">{{sensor_name}}</td>
+                <td>{{sensor_note_name}}</td>
+            </tr>
+            [[FIN_ITERAR_TR]]
+        </tbody>
+    </table>
+
+</div>
+<div  id="ContainerSaveLog" class="table" style="text-align:center;overflow-x: hidden !important; overflow-y: hidden;">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <select id="selectSensorLogBook" class="form-control text-center" style="background-color: white;">
+                <option value="mensaje" disabled selected>¡{{sensors.Count()}} sensores disponibles!</option>
+                [[OPTIONS]]
+                <option value="{{sensor_id}}">{{sensor_name}}</option>
+                [[END_OPTIONS]]
+            </select>
+
+        </div>
+        <div class="col-md-7 text-center">
+            <input id="inputLogBook" style="background-color: white;" class="form-control" />
+        </div>
+        <div class="col-md-1 text-center">
+            <button onClick="SaveLogBook({{idInstrumento}})" class="btn btn-primary form-control">Save</button>
+        </div>
+    </div>
+</div>

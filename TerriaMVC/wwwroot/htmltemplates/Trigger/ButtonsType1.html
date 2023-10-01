@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+   
+    <div class='mb-5' style='overflow-x: auto;'>
+        <ul class='nav flex-nowrap text-nowrap'>
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' data-bs-toggle='tab'>Detalles</a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' onclick="GenerateGraphController({{idInstrumento}},1,false,null,null,-1,'Serie de Tiempo')" data-bs-toggle='tab'>Serie de Tiempo</a>
+            </li>
+            [[INSERTAR_BOTONES]]
+            <li class='nav-item'>
+                <a class='nav-link btn btn-active-light btn-color-white btn-active-color-primary rounded-bottom-0' onclick="GenerateGraphController({{idInstrumento}},0,false,null,'{{sensor.sensor_name}}',{{sensor.sensor_id}},'{{sensor.sensor_name}}')">{{sensor.sensor_name}}</a>
+            </li>
+            [[FIN_INSERTAR_BOTONES]]
+
+        </ul>
+</div>
+</body>
+</html>

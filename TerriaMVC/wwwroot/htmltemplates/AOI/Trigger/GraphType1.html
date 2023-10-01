@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Subplots con Highcharts</title>
+</head>
+<body>
+    <div id="mainDiv" style="background-color: white; width: 100%">
+        <div style="width: 70%; height: 50%; margin: 0 auto;">
+            <div class="row" style="text-align:center;">
+                <div class="col-md-6 text-center mt-1">
+                    <div class="d-flex justify-content-center">
+
+                        <div style="flex: 1; ">
+                            <input style="padding: 0.5rem 0.5rem; font-size: 0.875rem;" type="text" id="datepicker" autocomplete="off" placeholder="Buscar eventos" class="form-control text-center">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center mt-1">
+                    <div class="d-flex justify-content-center">
+                        <div id="divTest" style="flex: 1;">
+                            <select style="padding: 0.5rem 0.5rem; font-size: 0.875rem;" id="selectFechas" class="form-control text-center">
+                                <option value="mensaje" disabled>¡3 eventos disponibles!</option>
+                                <option value="evento1">Evento 1</option>
+                                <option value="evento2">Evento 2</option>
+                                <option value="evento3" selected>Evento 3 (seleccionado)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="container" style="width: 100%; height: 400px;">
+            [[CHECK]]
+            <script id="executeHighCharts">
+            chart = Highcharts.chart('container', {
+            chart: {
+                type: 'line',
+                marginTop: 50,
+                spacingTop: 10,
+                events: {
+                    redraw: function () {
+                        chart = this;
+                        drawVerticalLines({{cantidadDeSensores}});
+                         console.log("redraw");
+                    },
+                    load: function () {
+                        chart = this;
+                        drawVerticalLines({{cantidadDeSensores}});
+                        console.log("load");
+                    }
+                },
+            },
+            title: {
+                text: '{{title}}'
+            }
+            ,
+            xAxis: {
+                categories: {{fechasEjeX}}
+            },
+            yAxis: [
+            [[ITERAR_yAxis]]
+            [[FIN_ITERAR_yAxis]]],
+            series: [
+            [[ITERAR_SERIES]]
+            [[FIN_ITERAR_SERIES]]
+            ],
+            exporting: {
+                enabled: true,
+                menuItemDefinitions: {
+                    viewFullscreen: {
+                        textKey: 'viewFullscreen',
+                        onclick: function () {
+                            this.fullscreen.toggle();
+                        }
+                    },
+                    downloadPNG: {
+                        textKey: 'downloadPNG',
+                        onclick: function () {
+                            this.exportChart({ type: 'image/png' });
+                            chart = this;
+                            console.log("Después de descargar")
+                            chart.redraw();
+                        }
+                    }
+                },
+                buttons: {
+                    contextButton: {
+                        menuItems: ["viewFullscreen", "separator", "downloadPNG"]
+                    }
+                },
+            },
+        });
+            </script>
+            [[END_CHECK]]
+        </div>
+    </div>
+    
+    <script>
+        calendar("{{fechasCalendario}}","{{eventos}}",{{idInstrumento}},{{idSensor}},"{{nombreSensores}}");
+        generateSelect("{{eventos}}");
+        var datepickerInput = document.getElementById("datepicker");
+        datepickerInput.value = "{{fechaSeleccionada}}";
+
+    </script>
+</body>
+</html>

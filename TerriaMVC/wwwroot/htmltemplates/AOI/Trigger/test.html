@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Subplots con Highcharts</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div style="background-color: white; width: 100%">
+        <div style="width: 70%; height: 50%; margin: 0 auto;">
+            <div class="row" style="text-align:center;">
+                <div class="col-md-6 text-center mt-1">
+                    <div class="d-flex justify-content-center">
+>
+                        <div style="flex: 1; ">
+                            <input style="padding: 0.5rem 0.5rem; font-size: 0.875rem;" type="text" id="datepicker" autocomplete="off" placeholder="Buscar eventos" class="form-control text-center">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center mt-1">
+                    <div class="d-flex justify-content-center">
+                        <div style="flex: 1;">
+                            <select style="padding: 0.5rem 0.5rem; font-size: 0.875rem;" id="selectFechas" class="form-control text-center" disabled>
+                                <option value="opcion1">Sin eventos</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div id="container" style="width: 100%; height: 400px;"></div>
+
+
+    <script>
+        var seriesData = {
+            series1: {
+                name: 'Serie 1',
+                data: [10, 52, 1118],
+                yAxis: 0,
+                yAxisTitle: 'Serie 1',
+            },
+            series2: {
+                name: 'Serie 2',
+                data: [15, 8, 14],
+                yAxis: 1,
+                yAxisTitle: 'Serie 2',
+            },
+            series3: {
+                name: 'Serie 3',
+                data: [12, 6, 20],
+                yAxis: 2,
+                yAxisTitle: 'Serie 3',
+            }
+        };
+
+        function drawChart() {
+            chart = Highcharts.chart('container', {
+                chart: {
+                    type: 'line',
+                    marginTop: 50,
+                    spacingTop: 10,
+                    events: {
+                        redraw: drawVerticalLines,
+                        load: function () {
+                            chart = this;
+                            drawVerticalLines();
+                        }
+                    },
+                },
+                title: {
+                    text: 'Preparando gráfico'
+                },
+                xAxis: {
+                    categories: ['Categoría 1', 'Categoría 2', 'Categoría 3']
+                },
+                yAxis: [{
+                    title: {
+                        text: seriesData.series1.yAxisTitle
+                    },
+                    height: '30%',
+                    offset: 0
+                }, {
+                    title: {
+                        text: seriesData.series2.yAxisTitle
+                    },
+                    top: '35%',
+                    height: '30%',
+                    offset: 0
+                }, {
+                    title: {
+                        text: seriesData.series3.yAxisTitle
+                    },
+                    top: '70%',
+                    height: '30%',
+                    offset: 0
+                }],
+                series: [
+                    seriesData.series1,
+                    seriesData.series2,
+                    seriesData.series3
+                ],
+                exporting: {
+                    enabled: true,
+                    menuItemDefinitions: {
+                        viewFullscreen: {
+                            textKey: 'viewFullscreen',
+                            onclick: function () {
+                                this.fullscreen.toggle();
+                                setTimeout(drawVerticalLines, 500); // Dibuja las líneas después de 500ms
+                            }
+                        },
+                        downloadPNG: {
+                            textKey: 'downloadPNG',
+                            onclick: function () {
+                                drawVerticalLines();
+                                this.exportChart({ type: 'image/png' });
+                                chart = this;
+                                console.log("Después de descargar")
+                                chart.redraw();
+                            }
+                        }
+                    },
+                    buttons: {
+                        contextButton: {
+                            menuItems: ["viewFullscreen", "separator", "downloadPNG"]
+                        }
+                    },
+                },
+            });
+        }
+        drawChart();
+        calendar();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function calendar() {
+            var enabledDates = "";
+            var datePickerPromise = $.Deferred();
+
+            function onOpen() {
+                setTimeout(function () {
+                    const buttonPane = document.querySelector('.ui-datepicker-buttonpane.ui-widget-content');
+                    if (buttonPane) {
+                        const buttons = buttonPane.querySelectorAll('button');
+                        $(".ui-datepicker-current").prop("disabled", false);
+
+                        buttons.forEach((button) => {
+                            if (button.textContent === "Hoy" && !button.onclick) {
+                                button.onclick = function () {
+                                    const currentDate = new Date();
+                                    $("#datepicker").datepicker('setDate', currentDate);
+                                    console.log("Una vez.");
+                                    onOpen(); // Llamada a la función onOpen al abrir el selector de fechas
+                                };
+                            }
+                        });
+                    } else {
+                        console.log("El elemento no se encontró.");
+                    }
+                }, 50);
+            }
+
+
+            // Agregar evento al botón "Hoy"
+            $(".ui-datepicker-current").on("click", function () {
+                const currentDate = new Date();
+                $("#datepicker").datepicker('setDate', currentDate);
+                onOpen(); // Llamada a la función onOpen al abrir el selector de fechas
+            });
+
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                currentText: 'Hoy',
+                dateFormat: 'dd/mm/yy',
+                yearRange: '1900:c',
+                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+                dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+
+                beforeShow: function (input, inst) {
+                    datePickerPromise.resolve();
+                    onOpen(); // Llamada a la función onOpen al abrir el selector de fechas
+                },
+                onChangeMonthYear: function (year, month, inst) {
+                    onOpen(); // Llamada a la función onOpen al cambiar de mes y año
+                },
+                beforeShowDay: function (date) {
+                    enabledDates = ["10-08-2023", "11-08-2023", "12-08-2023"];
+                    var formattedDate = $.datepicker.formatDate("dd-mm-yy", date);
+
+                    if (enabledDates.includes(formattedDate)) {
+                        // console.log("Día cliqueado.")
+                        return [true, "ui-state-enabled"];
+                    } else {
+                        return [false, ""];
+                    }
+                },
+                onSelect: function (dateText, inst) {
+                    var selectedDay = inst.selectedDay;
+                    var selectedMonth = (inst.selectedMonth + 1).toString().padStart(2, '0');
+                    var selectedYear = inst.selectedYear;
+                    var selectedDate = selectedDay + '-' + selectedMonth + '-' + selectedYear;
+                    console.log("Día seleccionado:", selectedDate);
+
+
+                    var selectElement = document.getElementById("selectFechas");
+                    while (selectElement.firstChild) {
+                        selectElement.removeChild(selectElement.firstChild);
+                    }
+                    if (selectedDate == enabledDates[0]) {
+                        selectElement.disabled = false;
+                        console.log("1");
+                        var option1 = document.createElement("option");
+                        option1.value = "opcion1";
+                        option1.text = "Opción 1";
+                        selectElement.appendChild(option1);
+
+
+                        var placeholderOption = document.createElement("option");
+                        placeholderOption.disabled = true;
+                        placeholderOption.selected = true;
+                        placeholderOption.text = `¡${selectElement.options.length} eventos encontrados!`
+                        selectElement.insertBefore(placeholderOption, selectElement.firstChild);
+                        // Encuentra el elemento con el id "container"
+
+
+
+
+                    } else
+                        if (selectedDate == enabledDates[1]) {
+                            selectElement.disabled = false;
+                            console.log("2");
+
+                            var option1 = document.createElement("option");
+                            option1.value = "opcion1";
+                            option1.text = "Opción 1";
+                            selectElement.appendChild(option1);
+
+                            var option2 = document.createElement("option");
+                            option2.value = "opcion2";
+                            option2.text = "Opción 2";
+                            selectElement.appendChild(option2);
+                            var containerElement = document.getElementById("container");
+
+                            selectElement.addEventListener("change", test);
+
+                            // Encuentra el elemento con el id "container"
+
+
+                            function test() {
+
+
+                                var spinnerElement = document.createElement("div");
+                                spinnerElement.className = "spinner-border text-success"; // Clase para aplicar estilos al spinner
+
+
+                                // Borra el contenido actual del contenedor
+                                containerElement.innerHTML = "";
+
+                                // Agrega el spinner al contenedor
+                                containerElement.appendChild(spinnerElement);
+                            }
+
+                            var placeholderOption = document.createElement("option");
+                            placeholderOption.disabled = true;
+                            placeholderOption.selected = true;
+                            placeholderOption.text = `¡${selectElement.options.length} eventos encontrados!`
+                            selectElement.insertBefore(placeholderOption, selectElement.firstChild);
+                            // Encuentra el elemento con el id "container"
+
+                            // Verifica si se encontró el elemento antes de eliminarlo
+                            if (containerElement) {
+                                // Elimina el elemento
+
+                            }
+
+                        } else
+                            if (selectedDate == enabledDates[2]) {
+                                selectElement.disabled = false;
+                                // Agregar tres opciones al select
+                                var option1 = document.createElement("option");
+                                option1.value = "opcion1";
+                                option1.text = "Opción 1";
+                                selectElement.appendChild(option1);
+
+                                var option2 = document.createElement("option");
+                                option2.value = "opcion2";
+                                option2.text = "Opción 2";
+                                selectElement.appendChild(option2);
+
+                                var option3 = document.createElement("option");
+                                option3.value = "opcion3";
+                                option3.text = "Opción 3";
+                                selectElement.appendChild(option3);
+
+                                // selectElement.addEventListener("change", updateSeriesData);
+
+                                var placeholderOption = document.createElement("option");
+                                placeholderOption.disabled = true;
+                                placeholderOption.selected = true;
+                                placeholderOption.text = `¡${selectElement.options.length} eventos encontrados!`
+                                selectElement.insertBefore(placeholderOption, selectElement.firstChild);
+
+                            }
+
+
+                    if (inst.selectedDay === new Date().getDate() &&
+                        inst.selectedMonth === new Date().getMonth() &&
+                        inst.selectedYear === new Date().getFullYear()) {
+                        $(this).datepicker('setDate', new Date());
+                        $("#Hola").prop("disabled", true); // Habilitar el botón "Hola"
+
+                    }
+                },
+
+                onClose: function (dateText, inst) {
+                    $(this).blur(); // Remover el foco del input
+                    return false;
+                },
+            });
+
+        }
+
+    </script>
+</body>
+</html>

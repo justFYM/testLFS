@@ -1,0 +1,153 @@
+{
+  "homeCamera": {
+    "lookAt": {
+      "targetLongitude": -70.372198,
+      "targetLatitude":  -23.624389,
+      "targetHeight": 0,
+      "heading": 0,
+      "pitch": 90,
+      "range": 500
+  }
+  },
+  "catalog": [
+    {
+      "type": "group",
+      "name": "Hola",
+      "description":"Testeando",
+      
+      "info": [{
+        "name":"A ver"
+        
+      }
+      ],
+      "members": [
+        {
+          "id": "DL4Av6wY5a",
+          "type": "geojson",
+          "isOpenInWorkbench":false,
+          "name": "Clinoextensometro",
+          "description": "a ver",
+          "url": "http://localhost:8181/geoserver/cite/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=cite%3AClinoextensometro&maxFeatures=50&outputFormat=application%2Fjson",
+          "disableExport": false,
+          "disablePreview": false,
+          "requestData":""
+         
+        },
+        {
+          "id": "DL4Av6wY5b",
+          "type": "geojson",
+          "name": "GNSS",
+          "isOpenInWorkbench": false,
+          "description": "a ver",
+          "style": {
+            "marker-color": "#6d6552",
+            "marker-size": "36.8px"
+          },
+          "url": "http://localhost:8181/geoserver/cite/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=cite%3AGNSS&maxFeatures=50&outputFormat=application%2Fjson",
+          "disableExport": false,
+          "disablePreview": false,
+          "requestData": ""
+
+        },
+        {
+          "id": "DL4Av6wY5c",
+          "type": "geojson",
+          "isOpenInWorkbench":false,
+          "name": "Piezometro",
+          "description": "a ver",
+          "style":{
+            "marker-color": "#0000FF",
+            "marker-size": "36.8px"
+          },
+          "url": "http://localhost:8181/geoserver/cite/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=cite%3APiezometro&maxFeatures=50&outputFormat=application%2Fjson",
+          "disableExport": false,
+          "disablePreview": false,
+          "requestData":""
+         
+        },
+        {
+          "id": "DL4Av6wY5d",
+          "type": "geojson",
+          "isOpenInWorkbench": false,
+          "name": "Prisma",
+          "style": {
+            "marker-color": "#C49803",
+            "marker-size": "36.8px"
+          },
+          "description": "a ver",
+          "url": "http://localhost:8181/geoserver/cite/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=cite%3APrisma&maxFeatures=50&outputFormat=application%2Fjson",
+          "disableExport": false,
+          "disablePreview": false,
+          "requestData": ""
+
+        },
+        {
+          "id": "DL4Av6wY5e",
+          "isOpenInWorkbench":false,
+          "type": "geojson",
+          "name": "Sensor_Humedad",
+          "description": "a ver",
+          "url": "http://localhost:8181/geoserver/cite/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=cite%3ASensor_Humedad&maxFeatures=50&outputFormat=application%2Fjson",
+          "disableExport": false,
+          "disablePreview": false,
+          "requestData":""
+         
+        },
+        {
+          "id": "DL4Av6wY5f",
+          "type": "geojson",
+          "isOpenInWorkbench": false,
+          "name": "Trigger",
+          "description": "a ver",
+          "url": "http://localhost:8181/geoserver/cite/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=cite%3ATrigger&maxFeatures=50&outputFormat=application%2Fjson",
+          "disableExport": false,
+          "disablePreview": false,
+          "requestData": ""
+
+        },
+        {
+          "id": "DL4Av6wY5gg",
+          "type": "geojson",
+          "isOpenInWorkbench": false,
+          "name": "Radar 01",
+          "style": {
+            "marker-color": "#8E0136",
+            "marker-size": "36.8px"
+          },
+          "description": "a ver",
+          "url": "http://localhost:8181/geoserver/cite/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=cite%3ARadar%2001&maxFeatures=50&outputFormat=application%2Fjson",
+          "disableExport": false,
+          "disablePreview": false,
+          "requestData": ""
+
+        },
+        {
+          "id": "DL4Av6wY5hh",
+          "type": "geojson",
+          "isOpenInWorkbench": false,
+          "name": "InSAR",
+          "style": {
+            "marker-color": "#23D707",
+            "marker-size": "36.8px"
+          },
+          "description": "a ver",
+          "url": "http://localhost:8181/geoserver/cite/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=cite%3AInSAR&maxFeatures=50&outputFormat=application%2Fjson",
+          "disableExport": false,
+          "disablePreview": false,
+          "requestData": ""
+
+        }
+      ]
+      
+      
+      
+    }
+    
+  ],
+  "viewerMode": "3dSmooth",
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-positron",
+    "previewBaseMapId": "basemap-positron"
+  },
+  "workbench": [ "DL4Av6wY5a", "DL4Av6wY5b", "DL4Av6wY5c", "DL4Av6wY5d", "DL4Av6wY5e", "DL4Av6wY5f", "DL4Av6wY5gg", "DL4Av6wY5hh" ]
+}
