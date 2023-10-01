@@ -9,61 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TerriaMVC
 build_property.RootNamespace = TerriaMVC
-build_property.ProjectDir = C:\Users\2023\Desktop\GesecologyGroup\Visual Studio\TerriaMVC\TerriaMVC\
+build_property.ProjectDir = C:\Users\2023\Desktop\GesecologyGroup\GIT\TestFrontEnd\testLFS\TerriaMVC\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\2023\Desktop\GesecologyGroup\Visual Studio\TerriaMVC\TerriaMVC
+build_property.MSBuildProjectDirectory = C:\Users\2023\Desktop\GesecologyGroup\GIT\TestFrontEnd\testLFS\TerriaMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/Home/Index.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/Home/Privacy.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/Session/Login.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/Session/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/Session/Registro.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/Session/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxSZWdpc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/Session/_layout.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/Session/_layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxfbGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/Shared/Error.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/Shared/_LinksLogin.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/Shared/_LinksLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MaW5rc0xvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/TerriaMap/TerriaMap.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/TerriaMap/TerriaMap.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVycmlhTWFwXFRlcnJpYU1hcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/TerriaMap/_layout.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/TerriaMap/_layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVycmlhTWFwXF9sYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/_ViewImports.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/_ViewStart.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2023/Desktop/GesecologyGroup/Visual Studio/TerriaMVC/TerriaMVC/Views/Shared/_Layout.cshtml]
+[C:/Users/2023/Desktop/GesecologyGroup/GIT/TestFrontEnd/testLFS/TerriaMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-16xdh6bv25

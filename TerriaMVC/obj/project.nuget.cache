@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t6qY0wPNOpZgc+KdltHaF9CI+3bV1IcZK3JLn8sRaRc41OGd6bA3zZZqKXGQ0sSHuapXPzVk7UCiLrpwhpQC/Q==",
+  "dgSpecHash": "vKzg+G1gig695W2WyIL23Hx8YbSOkHLPgM0/CYVM4RnRnmZRtFggw/lKRtcTHBe8+w0+KHwg2qyUACnTBz237A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\2023\\Desktop\\GesecologyGroup\\Visual Studio\\TerriaMVC\\TerriaMVC\\TerriaMVC.csproj",
+  "projectFilePath": "C:\\Users\\2023\\Desktop\\GesecologyGroup\\GIT\\TestFrontEnd\\testLFS\\TerriaMVC\\TerriaMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\2023\\.nuget\\packages\\microsoft.aspnetcore.authentication.microsoftaccount\\7.0.0\\microsoft.aspnetcore.authentication.microsoftaccount.7.0.0.nupkg.sha512",
     "C:\\Users\\2023\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.0\\microsoft.aspnetcore.cryptography.internal.7.0.0.nupkg.sha512",

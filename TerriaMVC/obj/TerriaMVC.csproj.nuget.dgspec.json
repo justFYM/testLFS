@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2023\\Desktop\\GesecologyGroup\\Visual Studio\\TerriaMVC\\TerriaMVC\\TerriaMVC.csproj": {}
+    "C:\\Users\\2023\\Desktop\\GesecologyGroup\\GIT\\TestFrontEnd\\testLFS\\TerriaMVC\\TerriaMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2023\\Desktop\\GesecologyGroup\\Visual Studio\\TerriaMVC\\TerriaMVC\\TerriaMVC.csproj": {
+    "C:\\Users\\2023\\Desktop\\GesecologyGroup\\GIT\\TestFrontEnd\\testLFS\\TerriaMVC\\TerriaMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2023\\Desktop\\GesecologyGroup\\Visual Studio\\TerriaMVC\\TerriaMVC\\TerriaMVC.csproj",
+        "projectUniqueName": "C:\\Users\\2023\\Desktop\\GesecologyGroup\\GIT\\TestFrontEnd\\testLFS\\TerriaMVC\\TerriaMVC.csproj",
         "projectName": "TerriaMVC",
-        "projectPath": "C:\\Users\\2023\\Desktop\\GesecologyGroup\\Visual Studio\\TerriaMVC\\TerriaMVC\\TerriaMVC.csproj",
+        "projectPath": "C:\\Users\\2023\\Desktop\\GesecologyGroup\\GIT\\TestFrontEnd\\testLFS\\TerriaMVC\\TerriaMVC.csproj",
         "packagesPath": "C:\\Users\\2023\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2023\\Desktop\\GesecologyGroup\\Visual Studio\\TerriaMVC\\TerriaMVC\\obj\\",
+        "outputPath": "C:\\Users\\2023\\Desktop\\GesecologyGroup\\GIT\\TestFrontEnd\\testLFS\\TerriaMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
